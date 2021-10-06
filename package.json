@@ -1,0 +1,19 @@
+{
+  "name": "learn.graphql",
+  "version": "1.0.0",
+  "description": "Exo-GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Horville",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.6.1",
+    "nodemon": "^2.0.13",
+    "sqlite3": "^5.0.2"
+  }
+}
