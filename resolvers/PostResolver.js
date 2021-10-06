@@ -1,5 +1,20 @@
+const fs = require('fs')
 const store = require('../store/store.json')
 const posts = store.post
+
+function saveStore(type,new_tab){
+  switch(type){
+      case "USER" : 
+          store.user = new_tab 
+          break
+      case "POST" : 
+          store.post = new_tab
+          break
+  }
+  fs.writeFileSync('./store.json' , JSON.stringify(store))
+}
+
+
 const resolversPost = {
     Query: {
       post(parent,args,context,info){

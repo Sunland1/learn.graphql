@@ -1,5 +1,20 @@
+//Store 
+const fs = require('fs')
 const store = require('../store/store.json')
 const users = store.user
+
+
+function saveStore(type,new_tab){
+  switch(type){
+      case "USER" : 
+          store.user = new_tab 
+          break
+      case "POST" : 
+          store.post = new_tab
+          break
+  }
+  fs.writeFileSync('./store.json' , JSON.stringify(store))
+}
 
 const resolversUser = {
     Query: {
@@ -12,10 +27,10 @@ const resolversUser = {
             const id = users.length
             const user = {
                 id: id,
-                email: args.email,
-                password: args.password,
-                lastName: args.lastName,
-                firstName: args.firstName
+                email: args.input.email,
+                password: args.input.password,
+                lastName: args.input.lastName,
+                firstName: args.input.firstName
             }
             users.push(user)
             saveStore("USER",users)
