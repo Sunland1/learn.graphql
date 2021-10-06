@@ -11,7 +11,7 @@ function saveStore(type,new_tab){
           store.post = new_tab
           break
   }
-  fs.writeFileSync('./store.json' , JSON.stringify(store))
+  fs.writeFileSync('../store/store.json' , JSON.stringify(store))
 }
 
 
